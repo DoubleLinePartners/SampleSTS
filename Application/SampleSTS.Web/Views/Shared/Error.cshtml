@@ -1,0 +1,16 @@
+﻿@model HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2 class="text-danger">Error.</h2>
+<h3 class="text-danger">An error occurred while processing your request.</h3>
+<div style="display: none">
+    Exception: @Model.Exception.ToString()
+    @if (Model.Exception.InnerException != null)
+    {
+        @: Inner Exception:
+        @Model.Exception.InnerException.ToString()
+    }
+</div>
